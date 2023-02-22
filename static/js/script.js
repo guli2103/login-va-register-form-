@@ -16,5 +16,18 @@
         $('.nm-ripple').fadeOut(500, function () {
             $('#nm-preloader').fadeOut(500);
         });
+
+        // show / hide text within password input field
+        let togglePassword = document.getElementById("toggle-password");
+        if (togglePassword) {
+            togglePassword.addEventListener('click', function() {
+                var el = document.getElementById("inputPassword");
+                if (el.type === "password") {
+                    el.type = "text";
+                } else {
+                    el.type = "password";
+                }
+            });
+        }
     });
 })(jQuery)

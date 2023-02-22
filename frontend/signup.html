@@ -9,7 +9,7 @@
     <meta name="description" content="Login and Register Form HTML Template - developed by 'ceosdesigns' - sold exclusively on 'themeforest.net'">
 	<meta name="author" content="ceosdesigns.sk">
 
-    <title>Nimoy · Login and Register Form HTML Template</title>
+    <title>SUSYS · Login and Register Form HTML Template</title>
 
 	<!-- // Favicon -->
 	<link href="images/favicon.png" rel="icon">
@@ -39,68 +39,69 @@
 	<!-- Preloader // -->
 
 	<main id="page-content" class="d-flex nm-aic nm-vh-md-100">
-		<!-- // Logo wrapper -->
-		<div id="logo-container">
-			<a class="d-none d-md-flex" href="../../index.html" aria-label="Nimoy">
-				<img src="images/logoReversed.png" alt="Logo">
-			</a>
-			<a class="d-flex d-md-none" href="../../index.html" aria-label="Nimoy">
-				<img src="images/logo.png" alt="Logo">
-			</a>
-		</div>
-		<!-- Logo wrapper // -->
-
-		<!-- // Non-form side -->
-		<div id="non-form-side" class="col-md-4 col-lg-4 col-xl-4 d-none d-md-flex nm-aic nm-vh-100">
-			<div class="overlay"></div>
-		</div>
-		<!-- Non-form Side // -->
 		
 		<!-- // Form side -->
 		<div class="container">
 			<div class="row">
-				<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 nm-st nm-st-md">
+				<div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-6 offset-xl-3 nm-st nm-st-md">
 					<form>
 						<div class="nm-mb-2 nm-mb-md-2">
-							<h2>Welcome to Nimoy</h2>
-							<p>Fill out the form to register</p>
+							<h2>Create your free account now!</h2>
+							<p>Already have an account? <a class="nm-fs-1 nm-fw-bd underline" href="login.html">Log In</a></p>
 						</div>
 						
-						<div class="form-group">
-							<label for="inputEmail">Email address</label>
-							<input type="email" class="form-control" id="inputEmail" tabindex="1" placeholder="Email address" required="">
-						</div>
-						
-						<div class="form-group">
-							<label for="inputPassword">Password</label>
-							<input type="password" class="form-control" tabindex="2" placeholder="********" id="inputPassword" required="">
+						<div class="input-group nm-gp">
+							<span class="nm-gp-pp"><i class="fas fa-user"></i></span>
+							<input type="text" class="form-control" id="inputUsername" tabindex="1" placeholder="Username" required="">
 						</div>
 
-						<div class="form-group">
-							<label for="inputConfirmPassword">Confirm Password</label>
-							<input type="password" class="form-control" tabindex="3" placeholder="********" id="inputConfirmPassword" required="">
-						</div>
-
-						<div class="form-group form-check">
-							<input type="checkbox" class="form-check-input" id="termsAndConditions">
-							<label class="form-check-label nm-check" for="termsAndConditions">I agree to the <a class="nm-lu nm-ct" href="#">Terms and Conditions</a></label>
+						<div class="input-group nm-gp">
+							<span class="nm-gp-pp"><i class="fas fa-envelope-open"></i></span>
+							<input type="email" class="form-control" id="inputEmail" tabindex="2" placeholder="Email" required="">
 						</div>
 						
+						<div class="input-group nm-gp">
+							<span class="nm-gp-pp"><i class="fas fa-lock"></i></span>
+							<input type="password" class="form-control" id="inputPassword" tabindex="3" placeholder="Password" required="">
+						</div>
+
 						<div class="row nm-aic nm-mb-2">
 							<div class="col-sm-6 nm-mb-1 nm-mb-sm-0">
-								<span class="nm-fs-1 nm-tm">Already have an account?</span>
-								<a class="nm-fs-1 nm-fw-bd" href="login.html">Login</a>
+								<span class="nm-fs-1 nm-tm">Show password</span>
+								<label class="nm-sw-pd">
+									<input type="checkbox" id="toggle-password" class="d-none">
+									<span class="slider round"></span>
+								</label>
 							</div>
 							
 							<div class="col-sm-6 nm-sm-tr">
-								<button type="submit" class="btn btn-primary nm-hvr nm-btn-1">Sign Up</button>
+								<button type="submit" class="btn btn-primary nm-hvr nm-btn-1">Log In</button>
 							</div>
-						</div>	
+						</div>
+
+						<div class="row nm-row-ct nm-tp-3">
+							<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input" id="termsAndConditions">
+								<label class="form-check-label nm-check" for="termsAndConditions">I agree to the <a class="nm-fs-1 nm-fw-bd" href="#">Terms & Conditions</a></label>
+							</div>
+						</div>
+
+						<div class="row nm-row-ct nm-tp-5">
+							<p>
+								© 2020 All Rights Reserved. <a class="heading" href="../index.html" aria-label="Nimoy">NIMOY</a> created by ceosDesigns. <a class="heading" href="#" aria-label="Terms & Conditions">Terms & Conditions</a>, <a class="heading" href="#" aria-label="Privacy">Privacy Settings</a>.
+							</p>
+						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 		<!-- Form Side // -->
+
+		<!-- // Non-form side -->
+		<div id="non-form-side" class="col-lg-6 col-xl-6 d-none d-lg-flex nm-aic nm-vh-100">
+			<div class="overlay"></div>
+		</div>
+		<!-- Non-form Side // -->
 	</main>
 	
 	<!-- // Vendor JS files -->

@@ -27,7 +27,8 @@
  *  	04.01 LOGO
  *  	04.02 FORM INPUTS
  *  	04.03 FORM CHECK
- *  	04.04 BUTTON 
+ *  	04.04 FORM SLIDER 
+ * 		04.05 BUTTON
  * 
  *  05. MEDIA QUERIES
  
@@ -45,25 +46,28 @@ html {
 
 body {
 	height: 100%;
-	font-size: 1rem;
+	font-size: 0.875rem;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
+	font-weight: 600;
 	line-height: 1.6;
-	color: #677788;
-	text-align: left;
+	color: #1e2022;
+	text-align: left;	
 }
 
 h2 {
 	color: #1e2022;
-	font-size: 1.875rem;
+	font-size: 2.5rem;
+	font-weight: 400;
+}
+
+h2 > a {
 	font-weight: 600;
 }
 
-label {
-	margin-bottom: .5rem;
-	display: block;
-    color: #1e2022;
-    font-size: 0.875rem;
+h3 {
+	font-size: 1rem;
+	font-weight: 400;
+	color: #677788;
 }
 
 a {
@@ -74,6 +78,24 @@ a {
 a:hover {
     color: #0069d9;
     text-decoration: none;
+}
+
+a.underline {
+	border-bottom: 1px solid#007bff;
+}
+
+a:hover.underline {
+	border-bottom: 1px solid#0069d9;
+}
+
+label {
+    display: block;
+    color: #1e2022;
+    font-size: 0.875rem;
+}
+
+.hidden {
+	display: none !important;
 }
 
 /*****************************/
@@ -97,7 +119,7 @@ a:hover {
 	position: relative;
 	width: 80px;
 	height: 80px;
-  }
+}
 
 .nm-ripple div {
 	position: absolute;
@@ -106,11 +128,11 @@ a:hover {
 	border-radius: 50%;
 	animation: nm-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
-  
+
 .nm-ripple div:nth-child(2) {
 	animation-delay: -0.5s;
-  }
-  
+}
+
 @keyframes nm-ripple {
 	0% {
 		top: 36px;
@@ -138,11 +160,11 @@ a:hover {
 
 	#non-form-side {
 		position: relative;
-		background-image: url("../images/background.jpg");
+		background-image: url('../images/background.jpg');
 		background-size: cover;
 		background-position: center;
 	}
-
+	
 	#non-form-side .overlay{
 		position: absolute;
 		top: 0px; 
@@ -150,6 +172,7 @@ a:hover {
 		width: 100%;
 		height: 100%;
 		background-color: #007bff;
+		background-image: url('../images/overlay.png');
 		opacity: 30%;
 	}
 
@@ -159,10 +182,6 @@ a:hover {
 
 	#form-side {
 		background-color: #ffffff;
-	}
-
-	.form-group {
-		margin-bottom: 1.5rem;
 	}
 
 	.nm-mb-0 {
@@ -189,8 +208,33 @@ a:hover {
 		height: 100vh;
 	}
 
+	.nm-row-ct {
+		display: block; 
+		text-align: center!important;
+	}
+
 	.nm-st {
-		padding-top: 8rem !important;
+		padding: 2.5rem;
+	}
+
+	.nm-spcr {
+		margin-top: 2rem;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	
+	.nm-tp-3 {
+		margin-top: 3rem;
+	}
+	
+	.nm-tp-5 {
+		margin-top: 5rem;
+	}
+
+	.form-group {
+		margin-bottom: 1.5rem;
+		width: auto;
+		padding-right: 0px;
 	}
 
 /*****************************/
@@ -218,8 +262,12 @@ a:hover {
 		font-size: 0.875rem;
 	}
 
+	.nm-fs-2 {
+		font-size: 1rem;
+	}
+
 	.nm-tm {
-		color: #8c98a4 !important;
+		color: #1e2022 !important;
 	}
 
 	.nm-fw-bd {
@@ -234,7 +282,7 @@ a:hover {
 	.nm-hvr {
 		transition: all 0.2s ease-in-out;
 	}
-
+	
 	.nm-hvr:hover {
 		transform: translateY(-3px);
 		box-shadow: 0 4px 11px rgba(0,123,255, 0.35);
@@ -246,11 +294,10 @@ a:hover {
 
 	#logo-container {
 		position: absolute;
-		top: 10px;
-		left: 15px;
+		top: 24px;
 		z-index: 10;
 	}
-
+	
 	#logo-container img{
 		height: 50px;
 	}
@@ -260,47 +307,58 @@ a:hover {
 	/*****************************/
 
 	.form-control {
-		background-color: #ffffff;
-		border: 0.0625rem solid #eeeeff;
-		border-radius: 0.3125rem;
+		background-color: transparent;
+		border: none;
+		border-bottom: 0.0625rem solid #eeeeff;
+		border-radius: 0;
 		font-size: 1rem;
 		font-weight: 400;
 		line-height: 1.6;
 		color: #1e2022;
-		padding: 0.75rem 1rem;
+		padding: 0.75rem 1.5rem;
 		height: 3.225rem;
 	}
 
 	.form-control:focus {
-	color: #1e2022;
-	background-color: #fff;
-	outline: 0;
-	box-shadow: 0 0 10px rgba(0,123,255,.1);
+		color: #1e2022;
+		outline: 0;
+		box-shadow: none;
 	}
 
 	.form-control::-webkit-input-placeholder {
-	color: #97a4af;
-	opacity: 1;
+		color: #97a4af;
+		opacity: 1;
 	}
 
 	.form-control::-moz-placeholder {
-	color: #97a4af;
-	opacity: 1;
+		color: #97a4af;
+		opacity: 1;
 	}
 
 	.form-control:-ms-input-placeholder {
-	color: #97a4af;
-	opacity: 1;
-	}
-
-	.form-control::-ms-input-placeholder {
-	color: #97a4af;
-	opacity: 1;
+		color: #97a4af;
+		opacity: 1;
 	}
 
 	.form-control::placeholder {
-	color: #97a4af;
-	opacity: 1;
+		color: #97a4af;
+		opacity: 1;
+	}
+
+	.nm-gp {
+		position: relative;
+		margin-bottom: 1.5rem;
+	}
+
+	.nm-gp-pp {
+		position: absolute;
+		top: 0.75rem;
+		left: 0rem;
+		background-color: transparent !important;
+		color: #007bff;
+		border: none;
+		z-index: 10;
+		font-size: 1rem;
 	}
 
 	/*****************************/
@@ -311,9 +369,8 @@ a:hover {
 		position: relative;
 	}
 
-	.form-check label{
-		color: #97a4af;
-		font-size: 13px;
+	.form-check {
+		display: inline-flex;
 	}
 
 	.form-check input[type='checkbox'] {
@@ -331,28 +388,41 @@ a:hover {
 
 	.nm-check::before {
 		border-radius: 0.25rem;
-		transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+		transition: .4s;
 		position: absolute;
-		top: 0.16rem;
+		top: 0.1875rem;
 		left: 0rem;
 		display: block;
 		width: 1rem;
 		height: 1rem;
 		pointer-events: none;
 		content: "";
-		background-color: #fff;
-		border: #d6dbeb solid 0.0625rem;
+		background-color: #eeeeff;
+		border: 1px solid #97a4af;
+	}
+
+	.nm-check:hover::before {
+		border-color: #007bff;
 	}
 
 	.nm-check::after {
 		position: absolute;
-		top: 0.16rem;
+		top: 0.1875rem;
 		left: 0rem;
 		display: block;
 		width: 1rem;
 		height: 1rem;
 		content: "";
 		background: no-repeat 50% / 50% 50%;
+	}
+
+	.form-check {
+		padding-left: 1.5rem;
+		font-weight: 400;
+	}
+
+	.form-check label {
+		color: #97a4af;
 	}
 
 	.form-check input:checked ~ .nm-check::before {
@@ -366,8 +436,64 @@ a:hover {
 	}
 
 	/*****************************/
-	/*  04.04 BUTTON             */
+	/*  04.04 FORM SLIDER        */
 	/*****************************/
+
+	.nm-sw-pd {
+		position: relative;
+		display: inline-block;
+		width: 35px;
+		height: 18px;
+		margin-bottom: -0.25rem;
+		margin-left: 0.5rem;
+	}
+
+	.nm-sw-pd input:checked + .slider {
+		background-color: #0069d9;
+		border: 1px solid #007bff;
+	}
+
+	.slider {
+		border-radius: 34px;
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #eeeeff;
+		border: 1px solid #97a4af;
+		transition: .4s;
+	}
+
+	.slider:hover {
+		border: 1px solid #007bff;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: "";
+		background-color: #007bff;
+		border-radius: 50%;
+		transition: .4s;
+		height: 14px;
+		width: 14px;
+		left: 1px;
+		bottom: 1px;
+		box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.34);
+	}
+
+	.nm-sw-pd input:checked + .slider:before {
+		background-color: #fff;
+	}
+	.nm-sw-pd input:checked + .slider:before {
+		transform: translateX(17px);
+	}
+
+	/*****************************/
+	/*  04.05 BUTTON             */
+	/*****************************/
+
 	.nm-btn-1 {
 		display: inline-block;
 		font-weight: 600;
@@ -413,5 +539,10 @@ a:hover {
 	
 	.nm-st-md {
 		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	#logo-container {
+		position: fixed;
 	}
 }

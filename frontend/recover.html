@@ -1,4 +1,5 @@
 ﻿{% load static %}
+{% load widget_tweaks %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,32 +46,46 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-6 offset-xl-3 nm-st nm-st-md">
-					<form>
-						<div class="nm-mb-2 nm-mb-md-2">
-							<h2>Password Reset</h2>
-							<p>Enter your email address and we will send you reset code!</p>
+					<form action="#" method="POST">
+						{% csrf_token %}
+						<div class="form-group form-box">
+							{{ form.username|add_class:'form-control' }}
+							<!-- <input name="name" type="text" class="form-control" placeholder="Full Name" aria-label="Full Name"> -->
+							<i class="flaticon-user"></i>
 						</div>
-						
-						<div class="input-group nm-gp">
-							<span class="nm-gp-pp"><i class="fas fa-envelope-open"></i></span>
-							<input type="email" class="form-control" id="inputEmail" tabindex="1" placeholder="Email" required="">
+						<div class="form-group form-box">
+							{{ form.email|add_class:'form-control' }}
+							<!-- <input name="email" type="email" class="form-control" placeholder="Email Address" aria-label="Email Address"> -->
+							<i class="flaticon-mail-2"></i>
 						</div>
-
-						<div class="row nm-aic nm-mb-2">
-							<div class="col-sm-6 nm-mb-1 nm-mb-sm-0">
-								<span>Have an account? </span><a class="nm-fs-1 nm-fw-bd underline" href="login.html">Log In</a>
+						<div class="form-group form-box clearfix">
+							{{ form.password1|add_class:'form-control' }}
+							<!-- <input name="password" type="password" class="form-control" autocomplete="off" placeholder="Password" aria-label="Password"> -->
+							<i class="flaticon-password"></i>
+						</div>
+						<div class="form-group form-box clearfix">
+							{{ form.password2|add_class:'form-control' }}
+							<!-- <input name="password" type="password" class="form-control" autocomplete="off" placeholder="Password" aria-label="Password"> -->
+							<i class="flaticon-password"></i>
+						</div>
+						<div class="form-group checkbox clearfix">
+							<div class="clearfix float-start">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" id="rememberme">
+									<label class="form-check-label" for="rememberme">
+										I agree to the terms of service
+									</label>
+								</div>
 							</div>
-							
-							<div class="col-sm-6 nm-sm-tr">
-								<button type="submit" class="btn btn-primary nm-hvr nm-btn-1">Reset</button>
-							</div>
 						</div>
-
-						<div class="row nm-row-ct nm-tp-5">
-							<p>
-								© 2020 All Rights Reserved. <a class="heading" href="../index.html" aria-label="Nimoy">NIMOY</a> created by ceosDesigns. <a class="heading" href="#" aria-label="Terms & Conditions">Terms & Conditions</a>, <a class="heading" href="#" aria-label="Privacy">Privacy Settings</a>.
-							</p>
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-lg btn-theme">Register</button>
 						</div>
+<!-- 
+						{{ form.as_p }}
+						<button type="submit">
+							Register
+						</button> -->
 					</form>
 				</div>
 			</div>

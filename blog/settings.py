@@ -112,7 +112,7 @@ STATICFILES_URL = [
     BASE_DIR / 'static'
 ]
 
-LOGIN_REDIRECT_URL= 'recover'
+LOGIN_REDIRECT_URL= 'register'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
